@@ -30,12 +30,8 @@ public class WorkerResource {
 	@Autowired
 	private Environment env;
 	
-	@Value("${test.config}")
-	private String testConfig;
-	
 	@GetMapping(value = "/configs")
 	public ResponseEntity<Void> getConfigs(){
-		logger.info("CONFIG =" + testConfig);
 		return ResponseEntity.noContent().build();
 	}
 	
