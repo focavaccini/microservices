@@ -20,14 +20,12 @@ public class UserResource {
 	
 	@GetMapping(value = "/{id}")
 	ResponseEntity<User> findById(@PathVariable Long id){
-		
 		User obj = repository.findById(id).get();
 		return ResponseEntity.ok(obj);
 	}
 	
 	@GetMapping(value = "/search")
-	ResponseEntity<User> findById(@RequestParam String email){
-		
+	ResponseEntity<User> findByEmail(@RequestParam String email){
 		User obj = repository.findByEmail(email);
 		return ResponseEntity.ok(obj);
 	}
